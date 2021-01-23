@@ -4,26 +4,37 @@
 <head>
     <link rel="stylesheet" href="index.css" />
     <title>Document</title>
-    <meta charset="utf-8" />
+ 
 </head>
 
 <body>
+    <span class="info">
     <div class="js-clock">
         <h1>00:00</h1>
     </div>
     <form class="js-form form">
-        <input type="text" placeholder="who are you 🤔" />
+        <input class="nameinput"type="text" placeholder="who are you🤔" />
     </form>
     <h4 class="js-greetings greetings"></h4>
     <form class="js-toDoForm">
-        <input type="text" placeholder="write a to do" />
+        <input class="write"type="text" placeholder="write a to do✍" />
     </form>
     <ul class="js-toDoList">
     </ul>
+    </span>
+    <span class="icon"></span>
+    <span class="js-weather"></span>
+    <footer onClick="window.location.reload()">
+        <button  ><i class="fas fa-sign-out-alt fa-2x"></i></button>
+   logout
+   </footer>
     <script src="clock.js"></script>
     <script src="greeting.js"></script>
     <script src="todo.js"></script>
     <script src="bg.js"></script>
+    <script src="weather.js"></script>
+    <script src="logout.js"></script>
+    <script src="https://kit.fontawesome.com/a21d24673a.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

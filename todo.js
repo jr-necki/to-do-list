@@ -6,6 +6,8 @@ const TODOS_LS = "toDos";
 
 let toDos = [];
 
+let isClicked=false;
+
 function deleteToDo(event) {
   const btn = event.target;
   const li = btn.parentNode;
@@ -16,6 +18,28 @@ function deleteToDo(event) {
   toDos = cleanToDos;
   saveToDos();
 }
+function handlemouseover(event){
+  this.innerText="❌";
+}
+function handlemouseout(event){
+  this.innerText="✖";
+}
+function checkToDo(event){
+  this.innerText="✅";
+  isClicked=true;
+}
+function handlemouseoverCheck(event){
+   this.innerText="✅";
+}
+function handlemouseoutCheck(event){
+  if(isClicked){
+    this.innerText="✅";
+    isClicked=false;
+  }else{
+    this.innerText="✔";
+
+  }
+}
 
 function saveToDos() {
   localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
@@ -23,15 +47,39 @@ function saveToDos() {
 function paintToDo(text) {
   const li = document.createElement("li");
   const delBtn = document.createElement("button");
+  const checkBtn = document.createElement("button");
   const span = document.createElement("span");
   const newId = toDos.length + 1;
-  delBtn.innerText = "❌";
+
+  checkBtn.innerText = "✔";
+  checkBtn.style.border="none";
+  checkBtn.style.backgroundColor="rgba(0,0,0,0)";
+
+  delBtn.innerText = "✖";
+  delBtn.style.border="none";
+  delBtn.style.backgroundColor="rgba(0,0,0,0)";
+
+  
   delBtn.addEventListener("click", deleteToDo);
+  delBtn.addEventListener("mouseover",handlemouseover);
+  delBtn.addEventListener("mouseout",handlemouseout);
+
+  checkBtn.addEventListener("click", checkToDo);
+  checkBtn.addEventListener("mouseover",handlemouseoverCheck);
+  checkBtn.addEventListener("mouseout",handlemouseoutCheck);
+
+  span.style.margin="5px";
   span.innerText = text;
-  li.appendChild(delBtn);
   li.appendChild(span);
+  li.appendChild(checkBtn);
+  li.appendChild(delBtn);
   li.id = newId;
   toDoList.appendChild(li);
+  toDoList.style.backgroundColor="yellow";
+  toDoList.style.opacity=0.6;
+  li.style.color="black";
+  toDoForm.style.margin="50px";
+  
   const toDoObj = {
     text: text,
     id: newId
