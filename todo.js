@@ -29,16 +29,10 @@ function checkToDo(event){
   isClicked=true;
 }
 function handlemouseoverCheck(event){
-   this.innerText="✅";
+   
 }
 function handlemouseoutCheck(event){
-  if(isClicked){
-    this.innerText="✅";
-    isClicked=false;
-  }else{
-    this.innerText="✔";
 
-  }
 }
 
 function saveToDos() {
@@ -76,7 +70,7 @@ function paintToDo(text) {
   li.id = newId;
   toDoList.appendChild(li);
   toDoList.style.backgroundColor="yellow";
-  toDoList.style.opacity=0.6;
+  
   li.style.color="black";
   toDoForm.style.margin="50px";
   

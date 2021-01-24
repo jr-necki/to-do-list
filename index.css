@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Shrikhand&display=swap');
 
 body{
-  font-family: 'Press Start 2P', cursive;
+ font-family: 'Nerko One', cursive;
+font-family: 'Shrikhand', cursive;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
   color: black;
-  
+
 }
 
 .info{
@@ -32,6 +33,9 @@ body{
 .showing{
     display: block;
     animation: nameEffect 3s linear infinite;
+    font-size: 30PX;
+    opacity: 0.4;
+    z-index: 3;
 }
 @keyframes nameEffect{
   0%{
@@ -42,10 +46,21 @@ body{
     color: blue;
   }
 }
+@keyframes borderEffect{
+  0%{
+    border: 3px solid orange;
+
+  }50%{
+     border: 3px solid red;
+
+  }100%{
+    border: 3px solid orange;
+  }
+}
 .write{
   width: 300px;
   height: 40px;
-  border:none;
+  border: none;
   background-color: rgba(0, 0, 0, 0);
   font-size: 20px;
   text-align: center;
@@ -57,7 +72,8 @@ body{
 }
 input::placeholder{
   color:black;
-   font-family: 'Press Start 2P', cursive;
+   font-family: 'Nerko One', cursive;
+  font-family: 'Shrikhand', cursive;
 }
 
 @keyframes fadeIn {
@@ -84,7 +100,6 @@ input::placeholder{
   color:black;
   font-size: 20px;
   background-color:orange;
-  opacity: 0.4;
 }
 
 footer{
