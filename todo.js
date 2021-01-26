@@ -63,6 +63,7 @@ function paintToDo(text) {
   checkBtn.addEventListener("mouseout",handlemouseoutCheck);
 
   span.style.margin="5px";
+  span.style.fontSize="15px";
   span.innerText = text;
   li.appendChild(span);
   li.appendChild(checkBtn);
@@ -70,10 +71,11 @@ function paintToDo(text) {
   li.id = newId;
   toDoList.appendChild(li);
   toDoList.style.backgroundColor="yellow";
-  
+  toDoList.style.border="4px solid black";
+  span.style.opacity=1;
   li.style.color="black";
   toDoForm.style.margin="50px";
-  
+  span.style.opacity=1;
   const toDoObj = {
     text: text,
     id: newId

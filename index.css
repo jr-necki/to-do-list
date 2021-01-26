@@ -31,9 +31,9 @@ font-family: 'Shrikhand', cursive;
     display: none;
 }
 .showing{
-    display: block;
+    display: flex;
     animation: nameEffect 3s linear infinite;
-    font-size: 30PX;
+    font-size: 50PX;
     opacity: 0.4;
     z-index: 3;
 }
@@ -62,7 +62,7 @@ font-family: 'Shrikhand', cursive;
   height: 40px;
   border: none;
   background-color: rgba(0, 0, 0, 0);
-  font-size: 20px;
+  font-size: 30px;
   text-align: center;
   
 }
